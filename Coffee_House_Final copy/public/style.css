@@ -1,0 +1,109 @@
+body{
+   padding-top:10px; 
+   padding-bottom:20px; 
+  word-wrap:break-word;
+  background-image: url(./img/nero.jpeg);
+  background-attachment: fixed;
+  /* background-position: center ; */
+  background-size: cover ;
+  background-repeat: no-repeat;
+  color: rgb(238, 231, 231);
+  font-size: 30px;
+}
+h1{
+  color: azure;
+  display: inline;
+  font-style: italic;
+  font-family: cursive;
+  margin-left: 250px;
+  background-color: rgb(75, 46, 3);
+  border-radius: 10px;
+}
+a{
+  color: rgb(255, 255, 255);
+}
+.completedOrders{
+  color: burlywood;
+}
+/* img{
+  height: 500px;
+  width:100%
+} */
+.jumbotron{
+  background-color: rgba(255, 255, 255, .1);
+}
+
+.menu{
+  height: 100px;
+  width: 100px;
+
+}
+
+.header{
+  color: rgb(240, 239, 219);
+  background-color: rgb(75, 46, 3);
+  border-radius: 10px;
+}
+h2{
+  text-align: center;
+}
+
+.login{
+  background-color: black;
+}
+.caramel{
+  font-size: 20px;
+}
+.wide{
+  height: 170px;
+  width: 100%;
+}
+
+.button{
+ background-color: red;
+}
+.customername{
+  margin-left: 155px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  transform: scale(1);
+  display: inline;
+}
+.blk{
+  display: inline;
+}
+
+input{
+  transform: scale(1.5);
+}
+.ggImg > img{
+  margin-bottom: 20px;
+  margin-left: 400px;
+  border: 4px rgb(242, 242, 250) solid;
+  border-radius: 20px; 
+}
+.login{
+  margin-left: 450px;
+  margin-bottom: 20px;
+}
+.milk,.toppings,.sugar,.syrup,.drinks,.size{
+  margin-bottom: 30px;
+  background-color: rgba(233, 229, 217, 0.5);
+  border-radius: 10px;
+  width: 300px;
+  margin-left: 300px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.orderOptionsSection{
+  width: 350px;
+  display: inline ;
+  /* background-color: rgba(233, 229, 217, 0.5); */
+  margin-left: 50px;
+}
+.submitOrderSection{
+  display: inline;
+  margin-left: 100px;
+}
+.form-control{
+width: 300px;
+}

@@ -1,0 +1,84 @@
+body{
+    padding-top:80px;
+    word-wrap:break-word;
+    background-color: rgb(32, 22, 3);
+   
+  }
+  h1{
+    color: white;
+    font-weight: bold;
+  }
+  img{
+    height: 500px;
+    width:100%
+  }
+  .adder{
+    margin-left: 450px;
+  }
+  #messages{
+     margin-right: 400px;
+    float: left;
+  }
+.hidden{
+  display: none;
+}
+ .orders{
+color: beige;
+}
+.general{
+ color: rgb(81, 244, 48)
+}
+/* .liked{
+color: rgb(209, 193, 185);
+} */
+.completedOrders, .color{
+  color: rgb(247, 245, 242);
+}
+/* .hated{
+color: rgb(218, 155, 74);
+} */
+.link1{
+  font-size: 20px;
+  margin-left: -130px;
+}
+.baristaName{
+  color: rgb(202, 37, 37);
+  margin-top: 20px;
+  background-color: rgb(221, 217, 217);
+  width: 200px;
+  font-size: 20px;
+  margin-left: 370px;
+}
+
+.general, .orders{
+  margin-left: 80px;
+}
+.serve-order, .btn-default{
+  margin-top: 5px;
+   margin-bottom: 10px; 
+  background-color: rgb(81, 244, 48);
+  
+  border-radius: 10px;
+}
+.btn-default{
+  width:80px ;
+  transform: scale(1.5);
+  border-color: black;
+}
+.ban{
+  margin-top: 5px;
+  background-color: red;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.fa-arrow-down{
+  color: red;
+}
+.border{
+  /* border: solid 2px rgb(241, 236, 236); */
+  width: 200px;
+  /* margin-bottom: 10px; */
+}
+.title{
+  color: red;
+}

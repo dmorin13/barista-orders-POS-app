@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+    <title>Dani's Coffee House</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+    <script src="https://kit.fontawesome.com/b1767921c9.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="profilestyle.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <h1><span class="fa solid fa-arrow-down"></span> Orders</h1>
+        
+    </div>
+
+    <a href="/"><img src="img/orders.jpeg" height="350px" width="150px"></a>
+  
+    
+    <div class="row">
+        <!-- what does local info do?  -->
+        <!-- LOCAL INFORMATION -->
+      <div>
+          <section>
+            <!-- change email to name  -->
+            <% if (user.local.email) { %>
+              <p class="baristaName">
+                <!-- change email to name  -->
+              
+                <strong>Barista Name</strong>:<span id="baristaName"><%= user.local.email %></span><br> 
+            </p>
+        <% } else { %>
+            <a href="/connect/local" class="btn btn-default">Connect Local</a>
+        <% } %>
+          </section>
+        
+      </div>
+      <div class="col-sm-6" id ="orders">
+            <!-- change general to pending orders?-->
+          <h3 class ="general">Pending Orders</h3>
+
+          <ul class="orders">
+            <% for(let i=0; i<pending.length; i++) {%> 
+              <% console.log(pending[i]) %>
+                <% if(pending[i].served===false){ %>
+                   <li id="pending-orders">
+                    <span class="customer2"> Customer Name: <%= pending[i].customerName %></span>
+                     <ul class="border"> 
+                        <%if(pending[i]['coffeeChoice'] !== null ){%>
+                          <li class="drink2">Drink: <%= pending[i]['coffeeChoice'] %></li>    
+                        <%}%>
+                        <%if(pending[i]['sugar'] !== null ){%>
+                          <li class="sugar2">Sugar: <%= pending[i]['sugar'] %></li>    
+                        <%}%>
+                        <%if(pending[i]['toppings'] !== null ){%>
+                          <li class="toppings2">Toppings: <%= pending[i]['toppings']%></li>
+                        <%}%>
+                        <%if(pending[i]['syrup'] !== null ){%>
+                          <li class="syrup2">Syrup: <%= pending[i]['syrup'] %></li>
+                        <%}%>
+                        <%if(pending[i]['milkChoice'] !== null ){%>
+                          <li class="milk2">Milk:<%= pending[i]['milkChoice'] %></li>
+                        <%}%>
+                        <%if(pending[i]['drinkSize'] !== null ){%>
+                          <li class="size2">Size: <%= pending[i]['drinkSize'] %></li> 
+                        <%}%>
+                     </ul>
+                        <!-- <span id="orderId" hidden> pending[i]._id %></span> -->
+                        <div class="orderBtns">
+                          <!-- add event listener to serve order button, if clicked, move order to the orders served section -->
+                          <button id="<%= pending[i]._id %>" value="<%= pending[i].customerName %>" class="serve-order">Serve Order</button>
+                       </div>
+                    </li>
+                
+                <!-- <li class="message">   -->
+                  <!-- <span id="displayUrl"> orders[i].coffeeChoice %></span> -->
+                  <!-- <span id="bookCover"> orders[i].coffeeInstructions %></span> -->
+                  <!-- <span id="displayUrl">orders[i].customerName %></span> -->
+                  <!-- <span id="displayUrl" hidden>orders[i]._id %></span> -->
+                  <!-- <span><i class="fa-solid fa-heart" aria-hidden="true"></i></span> -->
+
+                  <!-- <button><i class="fa fa-trash" data-id=" pending[i]._id " aria-hidden="true"></i></button>  -->
+                  <!-- <span><i class="fa fa-ban" aria-hidden="true"></i></span> -->
+                </li>
+            <% } %>
+            <% } %>
+          </ul>
+      </div>
+
+          <div class="col-sm-6" id="orders">
+            <h3 class ="completedOrders title">Orders in Progress</h3>
+              <ul class="completedOrders">
+              <% for(let i=0; i <served.length; i++){%>
+                <% if(served[i].served ===true) { %>
+                  <!-- change served to orders?  -->
+                    <li id ="served" class="barista2 orders color">Served By: <%= user.local.email %>
+                        <ul class="border">
+                         
+                          <%if(served[i]['coffeeChoice'] !== null ){%>
+                            <li class="beverage2">Drink: <%= served[i]['coffeeChoice'] %></li>   
+                          <%}%>
+                          <%if(served[i]['customerName'] !== null ){%>
+                            <li class="customer2">Customer Name: <%= served[i].customerName %></li>
+                          <%}%>
+                          <%if(served[i]['toppings'] !== null ){%>
+                            <li class="toppings2">Toppings: <%=served[i]['toppings'] %></li>
+                          <%}%>
+                          <%if(served[i]['syrup'] !== null ){%>
+                            <li class="syrup2">Syrup: <%= served[i]['syrup'] %></li>
+                          <%}%>
+                         
+                          <%if(served[i]['sugar'] !== null ){%>
+                            <li class="sugar2">Sugar: <%= served[i]['sugar'] %></li>
+                          <%}%>
+                          <%if(served[i]['milkChoice'] !== null ){%>
+                            <li class="milk2">Milk: <%= served[i]['milkChoice'] %></li>
+                          <%}%>
+                          <%if(served[i]['drinkSize']!== null ){%>
+                            <li class="size2">Drink Size: <%= served[i]['drinkSize'] %></li> 
+                          <%}%>  
+                        
+                          <button class="ban" data-id="served[i]._id" id="<%=served[i]._id %>" aria-hidden="true"> Done</button>
+                        </ul>
+                    </li>
+                  <!-- <li class="message">
+                    <span>Coffee Choice : </span><span id="displayUrl"> orders[i].coffeeChoice %></span>
+                    <span>Coffee Instructions : </span><span id="bookCover"> orders[i].coffeeInstructions %></span>
+                    <span>Customer Name : </span><span id="displayUrl">orders[i].customerName %></span>
+                    <span>Completed By :</span><span id="displayBarista" value ="baristaName"> orders[i].baristaName %></span>
+                    <img id="bookCover" src=" orders[i].url %>"></img> 
+                    <span><i class="fa fa-ban" aria-hidden="true"></i></span>
+                  </li> -->
+                  <% } %>
+                <% } %>   
+              </ul>
+              <!-- <button class="clear-all-served">Clear All Served Orders</button> -->
+            </div>
+          </div>
+      
+<script src="profile.js"></script> 
+          <!-- <div class="col-sm-6" id="orders">
+            <h3 class ="progress">Barista's Orders</h3>
+            <ul class="orders">
+               for(var j=0; j<allUsers.length; j++) {%> 
+               console.log(served)%> 
+               if (served.filter (x => x.baristaName === allUsers[j].local.email).length > 0) {%> 
+                change allUsers to users? -->
+                <!-- <h3 class ="liked"> allUsers[j].local.email %> 's orders</h3>   
+                 } %>
+                 for(let i=0; i<served.length; i++) {%>
+                 if(served[i].completed===true && allUsers[j].local.email=== served[i].baristaName){ %>
+                  <span class="beverage2">Drink:  served[i]['coffeeChoice'] %></span>
+                  <span class="toppings2">Toppings: served[i]['toppings'] %></span>
+                  <span class="syrup2">Syrup: served[i]['syrup'] %></span>
+                  <span class="sugar2">Sugar:  served[i]['sugar'] %></span>
+                  <span class="milk2">Milk: served[i]['milkChoice'] %></span>
+                  <span class="size2">Size:  served[i]['drinkSize'] %></span> 
+                  <span class="customer2">Customer: < served[i].customerName %></span> -->
+                    <!-- <li>orders: orders[i].coffeeChoice %></li>
+                    <li>Coffee Instructions: orders[i].coffeeInstructions %></li>
+                    <li>Customer: orders[i].customerName %></li> 
+                   } %>
+                 } %>  
+               } %>
+          </ul>      
+        </div> 
+
+         
+
+</div>
+
+<script src="profile.js"></script> 
+
+</body>
+</html>

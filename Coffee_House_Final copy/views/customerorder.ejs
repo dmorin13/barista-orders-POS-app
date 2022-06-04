@@ -1,0 +1,163 @@
+<!-- THIS WOULD BE THE MAIN PAGE FOR CUSTOMER ORDERS -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dani's Coffee House</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"/> 
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="/login"><img class= "login" src="img/sign-in-button.png" height="60px" width="200px" alt="login"></a>
+    <section class="ggImg">
+      <img src="img/menu.jpg" height="400px" width="300px" alt="coffee menu">
+  </section>
+    <div class="container">
+      <div class="welcome">
+        <h1>What can we get for you today?</h1>
+        <span> ☕ 🫖</span>
+    </div>
+       
+           <!-- <button class="login" type="submit" href="/login"><img src="img/sign-in-button.png" height="60px" width="200px" alt="login"></button> -->
+           
+           <!-- <button class="submitOrder" type="submit"><img src="img/checkout.png" height="60px" width="200px" alt="coffee menu"></button> 
+           -->
+  
+          <form action="/savedToDatabase" method="POST">  
+       
+            <span id="order">
+                <section class="orderOptionsSection" >
+                    <div id="orderOptions" class="drinks">
+                      <!-- <input type="text" placeholder="Special Instructions" name="coffeeInstructions">  
+                       -->
+                        <h2><strong class="header">Drink Choices: </strong></h2>
+                        <img class ="menu blk" src="img/black coffee.png" height="100px" width="100px" alt="coffee menu">
+                       
+                        <input type="radio" value="black" name="drinks" />
+                        <label for="black">Black</label>
+                        <br>
+                        <img class ="menu" src="img/caramel.png" height="100px" width="100px" alt="coffee menu">
+                        <input type="radio"value="caramel latte" name="drinks" />
+                        <label class="caramel" for="caramel"> Caramel Latte</label>
+                        <br>
+                        <img class ="menu" src="img/costa.png" height="100px" width="100px" alt="coffee menu">
+                        <input type="radio" value="costa" name="drinks" />
+                        <label for="costa">Costa</label>
+                        <br>
+                        <img class ="menu" src="img/macchiato.png" height="100px" width="100px" alt="coffee menu">
+                        <input type="radio" value="macchiato" name="drinks" />
+                        <label for="macchiato">Macchiato</label>
+                    </div>
+                    <div id="orderOptions" class="size">
+                        <h2><strong class="header">Drink Size: </strong> </h2>
+                        <br>
+                        <img class ="menu" src="img/large.png" height="100px" width="100px" alt="coffee menu">
+                        <input type="radio" value="Tall" name="size" />
+                        <label for="tall">Tall</label>
+                        <br>
+                        <img class ="menu" src="img/medium.png" height="100px" width="100px" alt="coffee menu">
+                        <input type="radio" value="Grande" name="size" />
+                        <label for="grande">Grande</label>
+                        <br>
+                        <img class ="menu" src="img/small.png" height="100px" width="100px" alt="coffee menu">
+                        <input type="radio" value="Venti" name="size" />
+                        <label for="venti">Venti</label>
+                    </div>
+                    <div id="orderOptions" class="milk">
+                        <h2><strong class="header"> Milk Choices: </strong></h2>
+                        <br>
+                        <img class ="menu" src="img/milk.png" height="100px" width="100px" alt="coffee menu">
+                        <input type="radio" value="whole" name="milk" />
+                        <label for="whole">Whole</label>
+                        <br>
+                        <img class ="menu" src="img/almond.png" height="100px" width="100px" alt="coffee menu">
+                        <input type="radio" value="almond" name="milk" />
+                        <label for="almond">Almond</label>
+                        <br>
+                        <img class ="menu" src="img/oat.png" height="100px" width="100px" alt="coffee menu">
+                        <input type="radio" value="oat" name="milk" />
+                        <label for="oat">Oat</label>
+                    </div>
+                    <div id="orderOptions" class="toppings">
+                      <img class ="wide" src="img/toppings.png" height="100px" width="100px" alt="coffee menu">
+                        <h2><strong class="header"> Toppings: </strong></h2>
+                        
+                        <input type="radio" value="cream" name="toppings" />
+                        <label for="whipped">Whipped Cream</label>
+                        <br>
+                        <input type="radio" value="cinnamon" name="toppings" />
+                        <label for="cinnamon">Cinnamon</label>
+                        <br>
+                        <input type="radio" value="caramel" name="toppings" />
+                        <label for="caramel">Caramel</label>
+                        <br>
+                        <input type="radio" value="cardamon" name="toppings" />
+                        <label for="nutmeg">Nutmeg</label>
+                    </div>
+                    <div id="orderOptions" class="syrup">
+                      <img class="wide" src="img/syrups.png" height="150px" width="150px" alt="coffee menu">
+                        <h2><strong class="header"> Syrup Choices: </strong></h2>
+                        
+                        <input type="radio" value="chocolate" name="syrup" />
+                        <label for="chocolate">Chocolate</label>
+                        <br>
+                        <input type="radio" value="cookie" name="syrup" />
+                        <label for="caramel2">Caramel</label>
+                        <br>
+                        <input type="radio" value="cardamon" name="syrup" />
+                        <label for="vanilla">Vanilla</label>
+                    </div>
+                    <div id="orderOptions" class="sugar">
+                      <img class ="wide" src="img/sugar.jpg" height="100px" width="120px" alt="coffee menu">
+                       <h2><strong class="header"> Sweetener Choices: </strong></h2>
+                        
+                        <input type="radio" value="brown" name="sugar" />
+                        <label for="brown">Brown Sugar</label>
+                        <br>
+                        <input type="radio" value="honey" name="sugar" />
+                        <label for="honey">Honey</label>
+                        <br>
+                        <input type="radio" value="stevia" name="sugar" />
+                        <label for="stevia">Stevia</label>
+                    </div>
+              
+                    <input type="text" class="customername" placeholder="Order For" name="customerName">
+                    
+                </section>
+                <section class="submitOrderSection">
+      
+                    <!-- <button class="submitOrder" type="submit">Submit Order</button>    -->
+                </section>             
+                <button class="submitOrder" type="submit"><img src="img/checkout.png" height="60px" width="200px" alt="coffee menu"></button> 
+           </form> 
+    
+        <!--  if (locals.success) { %>
+            <span class="orderPlaced"> Order placed!</span>
+              } %> 
+     -->
+        <script src="main.js"></script>
+        <!-- <script src="profile.js"></script> -->
+    </div>
+  </body>
+</html>
+  <!-- template code snippet:  -->
+        <!-- <form action="/savedToDatabase" method="POST"> 
+            <select name="coffeeChoice" id="">
+                <option value="Black Coffee">Black Coffee</option>
+                <option value="Iced Coffee">Iced Coffee</option>
+                <option value="Latte">Latte</option>
+                <option value="Americano">Americano</option>
+                <option value="Frappuchino">Frappuchino</option>
+                <option value="Macchiato">Macchiato</option>
+                <option value="Cappucino">Cappucino</option>
+                <option value="Puppucino">Puppucino</option>
+                <option value="Tears">Tears</option>
+                <option value="Water">Water</option>
+                <option value="Henny">Henny</option>
+                <option value="Tequila">Tequila</option>
+            </select>
+            <input type="text" placeholder="Special Instructions" name="coffeeInstructions">  
+            <input type="text" placeholder="Your name here!" name="customerName">
+            <button type="submit">SUBMIT ORDER!</button>
+          </form> -->
