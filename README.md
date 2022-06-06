@@ -1,6 +1,6 @@
 # barista-orders-POS-app
 C
-<h1 align="center">Coffee House </h1>
+<h1 align="center">Coffee House ☕ </h1>
 <h3 align="center">A POS app designed to help customer service workers keep track of orders and fulfill them with accuracy for maximum customer satisfaction.  </h3>
 
 - 🔭 I’m currently working on [Teacher Talk an app to facilaite multilingual communication between ESL familes and teachers](https://github.com/dmorin13)
